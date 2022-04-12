@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  mvc:
+    build: 
+        context: .
+        dockerfile: hey-url-challenge-code-dotnet/Dockerfile
+    ports:
+      - 5100:5100
+    depends_on:
+      - api
+      - mssql
+    entrypoint: ["/app/wait-for-it.sh", "api:5002", "-t", "300", "--", "dotnet", "hey-url-challenge-code-dotnet.dll"]
+    networks:
+     - heyurl
+  
+  api:
+    restart: on-failure
+    build: 
+        context: .
+        dockerfile: HeyUrl.API/Dockerfile
+    container_name: api
+    ports:
+      - 5002:5002
+    depends_on:
+     - mssql 
+    entrypoint: ["/app/wait-for-it.sh", "mssql:1433", "-t", "300", "--", "dotnet", "HeyUrl.API.dll"]
+    networks:
+     - heyurl
+  
+     
+  mssql:
+    restart: always
+    image: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
+    container_name: mssql
+    ports:
+        - 1433:1433
+    healthcheck:
+        test: [ "CMD", "curl", "-f", "localhost", "1433" ]
+        interval: 5s
+        timeout: 15s
+        retries: 1    
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=Admin*123
+    networks:
+        - heyurl
+
+networks:
+  heyurl:

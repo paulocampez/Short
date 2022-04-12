@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/materialize/css/materialize.min.css" />
+    <script src="~/lib/materialize/js/materialize.min.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo" asp-area="" asp-controller="Urls" asp-action="Index">HeyURL!</a>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+</body>
+</html>
