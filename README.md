@@ -1,10 +1,3 @@
-![FullStack Labs](/assets/FSL-logo-portrait.png)
-
-# HeyURL! Code Challenge
-
-This repository has been created as a code challenge for candidates with
-FullStack Labs. Please setup your environment following the `Getting Started`
-section before starting the challenge.
 
 ## Getting Started
 
@@ -16,12 +9,14 @@ section before starting the challenge.
 
 ```sh
 $ cd hey-url-challenge-code-dotnet
-$ dotnet watch run
+$ docker-compose up --build -d
 ```
 
-8. Open your browser
+4. Open your browser
 
-[https://localhost:5001/](https://localhost:5001/)
+[http://localhost:5100/](http://localhost:5100/)
+[http://localhost:5002/swagger/index.html](http://localhost:5002/swagger/index.html)
+
 
 ## Challenge
 
