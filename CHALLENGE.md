@@ -66,7 +66,7 @@ Here is an example of a response from the API:
       "id": "1",
       "attributes": {
         "created-at": "2018-08-15T02:48:08.642Z",
-        "original-url": "www.fullstacklabs.co/angular-developers",
+        "original-url": "www.foo.co/angular-developers",
         "url": "https://domain/fss1",
         "clicks": 2
       },
