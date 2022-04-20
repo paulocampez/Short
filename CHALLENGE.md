@@ -1,17 +1,3 @@
-![FullStack Labs](/assets/FSL-logo-portrait.png)
-
-# Before You Start
-
-Please follow the [`Getting Started` section on README](./README.md) to set up
-your environment before starting the challenge.
-
-# Summary
-
-For this code challenge a Candidate will clone and setup an existing .NET MVC
-application. The application will contain routes, migrations, models, and
-minimal views but with no actual functionality created. The candidate will show
-all her/his expertise building apps with the .NET framework and problem
-solving skills.
 
 # Overview
 
